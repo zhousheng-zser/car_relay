@@ -1,0 +1,5 @@
+{
+  "name": "Highway Monitor",
+  "description": "A map-like interface for monitoring a 4-lane highway with draggable cameras and clickable cars.",
+  "requestFramePermissions": []
+}
