@@ -1,0 +1,872 @@
+{
+  "cameras": {
+    "10.180.49.101": {
+      "ip": "10.180.49.101",
+      "latitude": 31.34434125,
+      "longitude": 121.51970017,
+      "heading": 296.5850987595142,
+      "altitude": 21.48,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "上行"
+      }
+    },
+    "10.180.49.95": {
+      "ip": "10.180.49.95",
+      "latitude": 31.345312780929678,
+      "longitude": 121.5174686908722,
+      "heading": 296.7020751086279,
+      "altitude": -9.62,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "上行"
+      }
+    },
+    "10.180.49.110": {
+      "ip": "10.180.49.110",
+      "latitude": 31.343189246141726,
+      "longitude": 121.52234226465228,
+      "heading": 296.1336752113765,
+      "altitude": -10.32,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "上行"
+      }
+    },
+    "10.180.49.116": {
+      "ip": "10.180.49.116",
+      "latitude": 31.34219733051199,
+      "longitude": 121.52461946010591,
+      "heading": 296.8618739793604,
+      "altitude": -3.3,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "上行"
+      }
+    },
+    "10.180.49.89": {
+      "ip": "10.180.49.89",
+      "latitude": 31.346151185995993,
+      "longitude": 121.51551067829134,
+      "heading": 296.69887141005836,
+      "altitude": 5.25,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "上行"
+      }
+    },
+    "10.180.49.5": {
+      "ip": "10.180.49.5",
+      "latitude": 31.35656679,
+      "longitude": 121.4963459,
+      "heading": 0,
+      "altitude": 11.74,
+      "enabled": true,
+      "connected": true,
+      "last_update": "",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "下行"
+      }
+    },
+    "10.180.49.23": {
+      "ip": "10.180.49.23",
+      "latitude": 31.35246876307888,
+      "longitude": 121.49819433689119,
+      "heading": 335.6258540816988,
+      "altitude": 29.2,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "上行"
+      }
+    },
+    "10.180.49.35": {
+      "ip": "10.180.49.35",
+      "latitude": 31.35203584621361,
+      "longitude": 121.49979561567308,
+      "heading": 274.36157169076216,
+      "altitude": 44.8,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:07:56",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "上行"
+      }
+    },
+    "10.180.49.38": {
+      "ip": "10.180.49.38",
+      "latitude": 31.351928189329207,
+      "longitude": 121.49966686964036,
+      "heading": 94.64203888113298,
+      "altitude": 9.93,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:08:58",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "下行"
+      }
+    },
+    "10.180.49.41": {
+      "ip": "10.180.49.41",
+      "latitude": 31.35209769160208,
+      "longitude": 121.49971514940265,
+      "heading": 275.5198448090427,
+      "altitude": -10.73,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "上行匝道"
+      }
+    },
+    "10.180.49.47": {
+      "ip": "10.180.49.47",
+      "latitude": 31.35180022,
+      "longitude": 121.50150401,
+      "heading": 96.5733915250184,
+      "altitude": 16.54,
+      "enabled": true,
+      "connected": true,
+      "last_update": "",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "下行"
+      }
+    },
+    "10.180.49.50": {
+      "ip": "10.180.49.50",
+      "latitude": 31.35191033,
+      "longitude": 121.50152458,
+      "heading": 275.80864310720597,
+      "altitude": 30.41,
+      "enabled": true,
+      "connected": false,
+      "last_update": "",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "上行"
+      }
+    },
+    "10.180.49.53": {
+      "ip": "10.180.49.53",
+      "latitude": 31.351018827324932,
+      "longitude": 121.5042480826378,
+      "heading": 118.07251938612285,
+      "altitude": 28.16,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:08:59",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "下行"
+      }
+    },
+    "10.180.49.56": {
+      "ip": "10.180.49.56",
+      "latitude": 31.35112648525029,
+      "longitude": 121.50422662496568,
+      "heading": 296.77489402100974,
+      "altitude": 11.7,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "上行"
+      }
+    },
+    "10.180.49.59": {
+      "ip": "10.180.49.59",
+      "latitude": 31.350388911461675,
+      "longitude": 121.50564014911653,
+      "heading": 117.45104344037031,
+      "altitude": 1.77,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "下行"
+      }
+    },
+    "10.180.49.62": {
+      "ip": "10.180.49.62",
+      "latitude": 31.350301868210593,
+      "longitude": 121.50598347187042,
+      "heading": 297.88969457423576,
+      "altitude": 1.5,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "上行"
+      }
+    },
+    "10.180.49.68": {
+      "ip": "10.180.49.68",
+      "latitude": 31.34943658,
+      "longitude": 121.50790608,
+      "heading": 297.9313243325034,
+      "altitude": 76.8,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "上行"
+      }
+    },
+    "10.180.49.71": {
+      "ip": "10.180.49.71",
+      "latitude": 31.34826633,
+      "longitude": 121.51046975,
+      "heading": 115.40909029620616,
+      "altitude": 3.23,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "下行"
+      }
+    },
+    "10.180.49.80": {
+      "ip": "10.180.49.80",
+      "latitude": 31.347088083362742,
+      "longitude": 121.51320666074754,
+      "heading": 117.91602775445682,
+      "altitude": 20.4,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "下行"
+      }
+    },
+    "10.180.49.86": {
+      "ip": "10.180.49.86",
+      "latitude": 31.346105371704482,
+      "longitude": 121.51540875434877,
+      "heading": 116.41107176814484,
+      "altitude": -20.47,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "下行"
+      }
+    },
+    "10.180.49.98": {
+      "ip": "10.180.49.98",
+      "latitude": 31.344240711105826,
+      "longitude": 121.5197002887726,
+      "heading": 115.12499428663835,
+      "altitude": 14.8,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "下行"
+      }
+    },
+    "10.180.49.107": {
+      "ip": "10.180.49.107",
+      "latitude": 31.343123,
+      "longitude": 121.52230583,
+      "heading": 118.9039224788171,
+      "altitude": 14.8,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "下行"
+      }
+    },
+    "10.180.49.113": {
+      "ip": "10.180.49.113",
+      "latitude": 31.342133187801775,
+      "longitude": 121.5245443582535,
+      "heading": 118.63926403796381,
+      "altitude": 8.95,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "下行"
+      }
+    },
+    "10.180.49.119": {
+      "ip": "10.180.49.119",
+      "latitude": 31.34107908,
+      "longitude": 121.526944,
+      "heading": 118.21957681135518,
+      "altitude": 18.2,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "下行"
+      }
+    },
+    "10.180.49.125": {
+      "ip": "10.180.49.125",
+      "latitude": 31.34116646023022,
+      "longitude": 121.52700662612916,
+      "heading": 296.72284948503864,
+      "altitude": -9.6,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "上行"
+      }
+    },
+    "10.180.49.131": {
+      "ip": "10.180.49.131",
+      "latitude": 31.34014474209457,
+      "longitude": 121.52927577495576,
+      "heading": 298.995905097462,
+      "altitude": 18.25,
+      "enabled": true,
+      "connected": true,
+      "last_update": "",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "上行"
+      }
+    },
+    "10.180.49.137": {
+      "ip": "10.180.49.137",
+      "latitude": 31.339035959187466,
+      "longitude": 121.53127670288086,
+      "heading": 305.22849133803095,
+      "altitude": 6.5,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "上行"
+      }
+    },
+    "10.180.49.140": {
+      "ip": "10.180.49.140",
+      "latitude": 31.33763850757338,
+      "longitude": 121.53332054615022,
+      "heading": 126.13797102015928,
+      "altitude": 18.5,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "下行"
+      }
+    },
+    "10.180.49.143": {
+      "ip": "10.180.49.143",
+      "latitude": 31.337739308056467,
+      "longitude": 121.53330981731416,
+      "heading": 306.14306178899824,
+      "altitude": -30.25,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "上行"
+      }
+    },
+    "10.180.49.146": {
+      "ip": "10.180.49.146",
+      "latitude": 31.3468189,
+      "longitude": 121.53464042,
+      "heading": 0,
+      "altitude": 12.46,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:08:54",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "下行"
+      }
+    },
+    "10.180.49.152": {
+      "ip": "10.180.49.152",
+      "latitude": 31.33554733,
+      "longitude": 121.536247,
+      "heading": 140.30387548355992,
+      "altitude": 18.1,
+      "enabled": true,
+      "connected": false,
+      "last_update": "2026-01-23 16:06:16",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "下行"
+      }
+    },
+    "10.180.49.155": {
+      "ip": "10.180.49.155",
+      "latitude": 31.33576917,
+      "longitude": 121.53620017,
+      "heading": 314.44871394320654,
+      "altitude": -2.4,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "上行"
+      }
+    },
+    "10.180.49.158": {
+      "ip": "10.180.49.158",
+      "latitude": 31.33570953206951,
+      "longitude": 121.53641045093538,
+      "heading": 317.11125237597145,
+      "altitude": -8.97,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "上行匝道"
+      }
+    },
+    "10.180.49.167": {
+      "ip": "10.180.49.167",
+      "latitude": 31.33171692,
+      "longitude": 121.53945275,
+      "heading": 142.10787603644616,
+      "altitude": 18.5,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "下行"
+      }
+    },
+    "10.180.49.170": {
+      "ip": "10.180.49.170",
+      "latitude": 31.3319006,
+      "longitude": 121.53955591,
+      "heading": 323.84162780284714,
+      "altitude": 22.57,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "上行"
+      }
+    },
+    "10.180.49.176": {
+      "ip": "10.180.49.176",
+      "latitude": 31.33009717,
+      "longitude": 121.5412295,
+      "heading": 319.578116674738,
+      "altitude": 3.8,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "上行"
+      }
+    },
+    "10.180.49.182": {
+      "ip": "10.180.49.182",
+      "latitude": 31.32786325,
+      "longitude": 121.54194025,
+      "heading": 178.04696232250012,
+      "altitude": 10.5,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "下行"
+      }
+    },
+    "10.180.49.185": {
+      "ip": "10.180.49.185",
+      "latitude": 31.32671836,
+      "longitude": 121.54204608,
+      "heading": 0,
+      "altitude": -1.1,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "上行"
+      }
+    },
+    "10.180.49.191": {
+      "ip": "10.180.49.191",
+      "latitude": 31.32570983,
+      "longitude": 121.54191233,
+      "heading": 12.169911656551449,
+      "altitude": -1.55,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:08:57",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "上行"
+      }
+    },
+    "10.180.49.194": {
+      "ip": "10.180.49.194",
+      "latitude": 31.32320001406789,
+      "longitude": 121.54106676578523,
+      "heading": 191.23924261625191,
+      "altitude": 24.4,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "下行"
+      }
+    },
+    "10.180.49.197": {
+      "ip": "10.180.49.197",
+      "latitude": 31.32312669331118,
+      "longitude": 121.54114723205568,
+      "heading": 11.294310988079758,
+      "altitude": 9.93,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "上行"
+      }
+    },
+    "10.180.49.206": {
+      "ip": "10.180.49.206",
+      "latitude": 31.320959122646677,
+      "longitude": 121.54069125652315,
+      "heading": 177.82132967060443,
+      "altitude": -4.3,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "下行"
+      }
+    },
+    "10.180.49.209": {
+      "ip": "10.180.49.209",
+      "latitude": 31.31952004,
+      "longitude": 121.5410495,
+      "heading": 347.7624516251141,
+      "altitude": 4.87,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "上行"
+      }
+    },
+    "10.180.49.212": {
+      "ip": "10.180.49.212",
+      "latitude": 31.3193735108125,
+      "longitude": 121.5409702062607,
+      "heading": 167.61158738869995,
+      "altitude": 10.26,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "下行"
+      }
+    },
+    "10.180.49.218": {
+      "ip": "10.180.49.218",
+      "latitude": 31.31725075,
+      "longitude": 121.54181433,
+      "heading": 0,
+      "altitude": -11.5,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "上行"
+      }
+    },
+    "10.180.49.221": {
+      "ip": "10.180.49.221",
+      "latitude": 31.31713183,
+      "longitude": 121.54156183,
+      "heading": 0,
+      "altitude": 18.25,
+      "enabled": true,
+      "connected": true,
+      "last_update": "",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "下行"
+      }
+    },
+    "10.180.49.227": {
+      "ip": "10.180.49.227",
+      "latitude": 31.31528104243603,
+      "longitude": 121.54162466526033,
+      "heading": 180,
+      "altitude": 10.39,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "下行"
+      }
+    },
+    "10.180.49.233": {
+      "ip": "10.180.49.233",
+      "latitude": 31.31380425,
+      "longitude": 121.54172983,
+      "heading": 0,
+      "altitude": -4.65,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "上行"
+      }
+    },
+    "10.180.49.236": {
+      "ip": "10.180.49.236",
+      "latitude": 31.31322786700966,
+      "longitude": 121.54158174991608,
+      "heading": 183.53228069611404,
+      "altitude": -6.7,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "下行"
+      }
+    },
+    "10.180.49.239": {
+      "ip": "10.180.49.239",
+      "latitude": 31.313044545598572,
+      "longitude": 121.54165148735048,
+      "heading": 1.6748449545323183,
+      "altitude": 9.97,
+      "enabled": true,
+      "connected": true,
+      "last_update": "2026-01-23 16:09:01",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "上行"
+      }
+    },
+    "10.180.49.242": {
+      "ip": "10.180.49.242",
+      "latitude": 31.31136713811846,
+      "longitude": 121.5414744615555,
+      "heading": 183.2892287853909,
+      "altitude": 15.99,
+      "enabled": true,
+      "connected": true,
+      "last_update": "",
+      "username": "admin",
+      "password": "hk123456",
+      "supports_fixed_location": true,
+      "note": "",
+      "tags": {
+        "direction": "下行"
+      }
+    }
+  },
+  "saved_at": "2026-01-23 16:09:01"
+}

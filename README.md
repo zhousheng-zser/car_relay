@@ -2,19 +2,31 @@
 <img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 </div>
 
-# Run and deploy your AI Studio app
+# car_relay
 
-This contains everything you need to run your app locally.
+## Structure
 
-View your app in AI Studio: https://ai.studio/apps/049e8b58-dee7-4259-b5d9-f3f0be76e478
+- `backend/server.ts`: local relay backend entry
+- `backend/config/cameras_config.json`: local camera config used by the relay backend
+- `src/`: frontend code
+- `restart.bat`: Windows local startup script
 
 ## Run Locally
 
-**Prerequisites:**  Node.js
-
+**Prerequisites:** Node.js
 
 1. Install dependencies:
    `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+2. Check or create `.env.local`
+3. Set at least:
+   - `PORT=3100`
+   - `API_PREFIX=/relay-api`
+   - `REMOTE_COLLECTOR_URL=http://127.0.0.1:5001`
+4. Start:
+   `restart.bat`
+
+## Notes
+
+- The relay backend no longer depends on `../radar_tracker` for runtime config.
+- Default camera config is stored in `backend/config/cameras_config.json`.
+- The local backend API is namespaced under `/relay-api` to reduce route conflicts.
