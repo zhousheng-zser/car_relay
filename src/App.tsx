@@ -8,8 +8,10 @@ import MapViewer from './components/MapViewer';
 import Sidebar from './components/Sidebar';
 import Minimap from './components/Minimap';
 import DebugPanel from './components/DebugPanel';
-import { Car, Camera } from './types';
-import { Car as CarIcon, Gauge, MapPin, Navigation, Radar, Clock3, Route } from 'lucide-react';
+import GeographicMap from './components/GeographicMap';
+import { Car, Camera, CameraSequenceGroup } from './types';
+import { Car as CarIcon, Gauge, MapPin, Navigation, Radar, Clock3, Route, Monitor, Map as MapIcon } from 'lucide-react';
+import { CameraGroupKey, filterCamerasByGroup } from './utils/cameraGroups';
 
 export default function App() {
   const sidebarWidth = 288;
@@ -22,6 +24,13 @@ export default function App() {
   const [isBusy, setIsBusy] = useState(false);
   const [debugOpen, setDebugOpen] = useState(true);
   const [debugSnapshot, setDebugSnapshot] = useState<any>(null);
+  const [viewMode, setViewMode] = useState<'simulation' | 'geographic'>('simulation');
+  const [selectedGroup, setSelectedGroup] = useState<CameraGroupKey>('all');
+  const [cameraSequenceGroups, setCameraSequenceGroups] = useState<CameraSequenceGroup[]>([]);
+  const [selectedSequenceGroupId, setSelectedSequenceGroupId] = useState<string>('all');
+  const [isCreatingSequenceGroup, setIsCreatingSequenceGroup] = useState(false);
+  const [draftSequenceGroupName, setDraftSequenceGroupName] = useState('');
+  const [draftSequenceCameraIds, setDraftSequenceCameraIds] = useState<string[]>([]);
 
   const [positionX, setPositionX] = useState(50);
   const [positionY, setPositionY] = useState(200);
@@ -34,13 +43,29 @@ export default function App() {
   const selectedCamera = selectedCar?.cameraId
     ? cameras.find((camera) => camera.id === selectedCar.cameraId) || null
     : null;
-  const roadLength = cameras.length > 0 ? Math.max(...cameras.map((c) => c.x)) + 1000 : 10000;
+  const groupedCameras = React.useMemo(() => filterCamerasByGroup(cameras, selectedGroup), [cameras, selectedGroup]);
+  const selectedSequenceGroup = React.useMemo(
+    () => cameraSequenceGroups.find((group) => group.id === selectedSequenceGroupId) || null,
+    [cameraSequenceGroups, selectedSequenceGroupId]
+  );
+  const sequenceFilteredCameras = React.useMemo(() => {
+    if (!selectedSequenceGroup || selectedSequenceGroupId === 'all') {
+      return groupedCameras;
+    }
+    const orderMap = new Map(selectedSequenceGroup.cameraIds.map((id, index) => [id, index]));
+    return groupedCameras
+      .filter((camera) => orderMap.has(camera.id))
+      .sort((a, b) => (orderMap.get(a.id) || 0) - (orderMap.get(b.id) || 0));
+  }, [groupedCameras, selectedSequenceGroup, selectedSequenceGroupId]);
+  const groupedCameraIds = React.useMemo(() => new Set(sequenceFilteredCameras.map((camera) => camera.id)), [sequenceFilteredCameras]);
+  const groupedCars = React.useMemo(() => cars.filter((car) => !car.cameraId || groupedCameraIds.has(car.cameraId)), [cars, groupedCameraIds]);
+  const roadLength = sequenceFilteredCameras.length > 0 ? Math.max(...sequenceFilteredCameras.map((c) => c.x)) + 1000 : 10000;
   const connectedCameraCount = cameras.filter((camera) => camera.connected).length;
 
   const visibleCars = React.useMemo(() => {
-    if (!hideAtNextCamera) return cars;
+    if (!hideAtNextCamera) return groupedCars;
 
-    const sortedCameras = [...cameras].sort((a, b) => a.x - b.x);
+    const sortedCameras = [...sequenceFilteredCameras].sort((a, b) => a.x - b.x);
     const nextCameraXMap = new Map<string, number>();
 
     for (let i = 0; i < sortedCameras.length; i++) {
@@ -54,7 +79,20 @@ export default function App() {
       const nextX = nextCameraXMap.get(car.cameraId);
       return nextX === undefined || car.x < nextX;
     });
-  }, [cars, cameras, hideAtNextCamera]);
+  }, [groupedCars, sequenceFilteredCameras, hideAtNextCamera]);
+
+  useEffect(() => {
+    if (selectedGroup === 'all') return;
+    const groupsInDirection = cameraSequenceGroups.filter((group) => {
+      if (selectedGroup === 'upbound') return group.direction === '上行';
+      if (selectedGroup === 'downbound') return group.direction === '下行';
+      if (selectedGroup === 'ramp') return group.direction === '上行匝道';
+      return true;
+    });
+    if (selectedSequenceGroupId !== 'all' && !groupsInDirection.some((group) => group.id === selectedSequenceGroupId)) {
+      setSelectedSequenceGroupId('all');
+    }
+  }, [selectedGroup, cameraSequenceGroups, selectedSequenceGroupId]);
 
   useEffect(() => {
     const handleResize = () => setScreenWidth(window.innerWidth - sidebarWidth);
@@ -145,10 +183,40 @@ export default function App() {
     }
   };
 
+  const currentDirectionLabel =
+    selectedGroup === 'upbound' ? '上行' : selectedGroup === 'downbound' ? '下行' : selectedGroup === 'ramp' ? '上行匝道' : '全部';
+
+  const toggleDraftSequenceCamera = (cameraId: string) => {
+    setDraftSequenceCameraIds((current) => {
+      if (current.includes(cameraId)) {
+        return current.filter((id) => id !== cameraId);
+      }
+      return [...current, cameraId];
+    });
+  };
+
+  const saveDraftSequenceGroup = () => {
+    if (!draftSequenceGroupName.trim() || draftSequenceCameraIds.length === 0 || currentDirectionLabel === '全部') {
+      return;
+    }
+    const nextGroup = {
+      id: `group-${Date.now()}`,
+      name: draftSequenceGroupName.trim(),
+      direction: currentDirectionLabel,
+      cameraIds: draftSequenceCameraIds,
+    };
+    setCameraSequenceGroups((current) => [...current, nextGroup]);
+    setSelectedSequenceGroupId(nextGroup.id);
+    setDraftSequenceGroupName('');
+    setDraftSequenceCameraIds([]);
+    setIsCreatingSequenceGroup(false);
+    setStatusMessage(`Saved group: ${nextGroup.name}`);
+  };
+
   return (
     <div className="flex h-screen w-full bg-slate-950 text-slate-200 font-sans overflow-hidden">
       <Sidebar
-        cameras={cameras}
+        cameras={groupedCameras}
         onSelectCamera={handleSelectCamera}
         hideAtNextCamera={hideAtNextCamera}
         onToggleHideAtNextCamera={() => setHideAtNextCamera(!hideAtNextCamera)}
@@ -158,29 +226,98 @@ export default function App() {
         onReloadConfig={() => callCameraAction('/cameras/reload-config', 'Camera config reloaded')}
         connectedCameraCount={connectedCameraCount}
         carCount={cars.length}
+        selectedGroup={selectedGroup}
+        onGroupChange={(group) => {
+          setSelectedGroup(group);
+          setSelectedSequenceGroupId('all');
+          setDraftSequenceCameraIds([]);
+          setIsCreatingSequenceGroup(false);
+        }}
+        cameraSequenceGroups={cameraSequenceGroups}
+        selectedSequenceGroupId={selectedSequenceGroupId}
+        onSelectSequenceGroup={setSelectedSequenceGroupId}
+        onDeleteSequenceGroup={(groupId) => {
+          setCameraSequenceGroups((current) => current.filter((group) => group.id !== groupId));
+          if (selectedSequenceGroupId === groupId) {
+            setSelectedSequenceGroupId('all');
+          }
+          setStatusMessage('Group deleted');
+        }}
+        isCreatingSequenceGroup={isCreatingSequenceGroup}
+        onStartCreateSequenceGroup={() => {
+          setIsCreatingSequenceGroup(true);
+          setDraftSequenceCameraIds([]);
+          setDraftSequenceGroupName('');
+          setSelectedSequenceGroupId('all');
+        }}
+        onCancelCreateSequenceGroup={() => {
+          setIsCreatingSequenceGroup(false);
+          setDraftSequenceCameraIds([]);
+          setDraftSequenceGroupName('');
+        }}
+        draftSequenceGroupName={draftSequenceGroupName}
+        onDraftSequenceGroupNameChange={setDraftSequenceGroupName}
+        draftSequenceCameraIds={draftSequenceCameraIds}
+        onSaveSequenceGroup={saveDraftSequenceGroup}
       />
 
       <div className="flex-1 flex flex-col relative">
         <main className="flex-1 relative overflow-hidden bg-slate-950">
           <DebugPanel debug={debugSnapshot} isOpen={debugOpen} onToggle={() => setDebugOpen(!debugOpen)} />
 
-          <MapViewer
-            cameras={cameras}
-            cars={visibleCars}
-            roadLength={roadLength}
-            positionX={positionX}
-            positionY={positionY}
-            scale={scale}
-            onPositionChange={(x, y) => {
-              setPositionX(x);
-              setPositionY(y);
-            }}
-            onScaleChange={setScale}
-            onCameraMove={() => {}}
-            onDeleteCamera={handleDeleteCamera}
-            onCarClick={(car) => setSelectedCarId(car.id)}
-            onBgClick={() => setSelectedCarId(null)}
-          />
+          <div className="absolute top-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 rounded-2xl border border-slate-700/70 bg-slate-900/85 p-2 shadow-2xl backdrop-blur-xl">
+            <button
+              onClick={() => setViewMode('simulation')}
+              className={`flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold transition-colors ${
+                viewMode === 'simulation'
+                  ? 'bg-slate-100 text-slate-900'
+                  : 'bg-transparent text-slate-400 hover:text-slate-200'
+              }`}
+            >
+              <Monitor className="h-4 w-4" />
+              Simulation
+            </button>
+            <button
+              onClick={() => setViewMode('geographic')}
+              className={`flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold transition-colors ${
+                viewMode === 'geographic'
+                  ? 'bg-cyan-500/15 text-cyan-300 border border-cyan-500/30'
+                  : 'bg-transparent text-slate-400 hover:text-slate-200'
+              }`}
+            >
+              <MapIcon className="h-4 w-4" />
+              Geographic Map
+            </button>
+          </div>
+
+          {viewMode === 'simulation' ? (
+            <MapViewer
+              cameras={sequenceFilteredCameras}
+              cars={visibleCars}
+              roadLength={roadLength}
+              positionX={positionX}
+              positionY={positionY}
+              scale={scale}
+              onPositionChange={(x, y) => {
+                setPositionX(x);
+                setPositionY(y);
+              }}
+              onScaleChange={setScale}
+              onCameraMove={() => {}}
+              onDeleteCamera={handleDeleteCamera}
+              onCarClick={(car) => setSelectedCarId(car.id)}
+              onBgClick={() => setSelectedCarId(null)}
+            />
+          ) : (
+            <GeographicMap
+              cameras={cameras}
+              selectedGroup={selectedGroup}
+              onGroupChange={setSelectedGroup}
+              isCreatingSequenceGroup={isCreatingSequenceGroup}
+              draftSequenceCameraIds={draftSequenceCameraIds}
+              onToggleDraftSequenceCamera={toggleDraftSequenceCamera}
+            />
+          )}
 
           {selectedCar && (
             <div className="absolute bottom-6 right-6 rounded-2xl border border-slate-700/50 bg-slate-900/85 p-5 shadow-2xl w-80 backdrop-blur-xl pointer-events-auto">
@@ -260,13 +397,15 @@ export default function App() {
           )}
         </main>
 
-        <Minimap
-          cameras={cameras}
-          positionX={positionX}
-          scale={scale}
-          screenWidth={screenWidth}
-          onPositionXChange={setPositionX}
-        />
+        {viewMode === 'simulation' && (
+          <Minimap
+            cameras={sequenceFilteredCameras}
+            positionX={positionX}
+            scale={scale}
+            screenWidth={screenWidth}
+            onPositionXChange={setPositionX}
+          />
+        )}
       </div>
     </div>
   );

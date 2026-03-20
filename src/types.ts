@@ -23,3 +23,10 @@ export interface Camera {
   targetCount?: number;
   lastUpdate?: string;
 }
+
+export interface CameraSequenceGroup {
+  id: string;
+  name: string;
+  direction: string;
+  cameraIds: string[];
+}
